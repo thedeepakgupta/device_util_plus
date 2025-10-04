@@ -1,7 +1,7 @@
 name: device_util_plus
-description: "`device_util_plus` is a lightweight Flutter package that provides easy access to device information like battery level, network status, and storage paths. It works natively on Android and iOS without any external dependencies."
-version: 0.0.1
-homepage: https://github.com/thedeepakgupta/device_util_plus
+description: "`device_util_plus` is a lightweight Flutter package that provides easy access to device information like battery, network and storage."
+version: 0.0.2
+homepage: "https://github.com/thedeepakgupta/device_util_plus"
 
 environment:
   sdk: ^3.7.0

@@ -7,6 +7,6 @@ class StorageUtils {
   /// RAM -> Total & available
   static Future<MemoryInfo> info() async {
     final result = await StoragePlatform.instance.storageInfo();
-    return MemoryInfo.fromJson(Map<String,dynamic>.from(result ?? {}));
+    return MemoryInfo.fromJson(Map<String, dynamic>.from(result ?? {}));
   }
 }

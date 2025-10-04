@@ -4,7 +4,9 @@ import '../enums/device_util_enum.dart';
 
 class MethodChannelNetwork extends NetworkPlatform {
   static const MethodChannel _channel = MethodChannel('device_utils');
-  static const EventChannel _stateChannel = EventChannel('device_utils/network-status-event');
+  static const EventChannel _stateChannel = EventChannel(
+    'device_utils/network-status-event',
+  );
 
   @override
   Future<bool> isConnected() async {

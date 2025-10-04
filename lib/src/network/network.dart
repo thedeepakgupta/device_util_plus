@@ -6,5 +6,6 @@ class NetworkUtils {
   static Future<bool> isConnected() => NetworkPlatform.instance.isConnected();
 
   /// Current network status
-  static Stream<NetworkStatus> get onNetworkChange => NetworkPlatform.instance.onNetworkChanged;
+  static Stream<NetworkStatus> get onNetworkChange =>
+      NetworkPlatform.instance.onNetworkChanged;
 }

@@ -5,7 +5,13 @@ class DeviceInfo {
   final String osVersion;
   final String brand;
 
-  DeviceInfo({this.deviceId = '', this.name = '', this.manufacturer = '', this.osVersion = '', this.brand = ''});
+  DeviceInfo({
+    this.deviceId = '',
+    this.name = '',
+    this.manufacturer = '',
+    this.osVersion = '',
+    this.brand = '',
+  });
 
   factory DeviceInfo.fromJson(Map<String, dynamic> js) => DeviceInfo(
     deviceId: js['deviceId'] ?? '',

@@ -4,8 +4,12 @@ import '../enums/device_util_enum.dart';
 
 class MethodChannelBattery extends BatteryPlatform {
   static const MethodChannel _channel = MethodChannel('device_utils');
-  static const EventChannel _levelChannel = EventChannel('device_utils/battery-level-event');
-  static const EventChannel _stateChannel = EventChannel('device_utils/battery-status-event');
+  static const EventChannel _levelChannel = EventChannel(
+    'device_utils/battery-level-event',
+  );
+  static const EventChannel _stateChannel = EventChannel(
+    'device_utils/battery-status-event',
+  );
 
   @override
   Future<int> getBatteryLevel() async {

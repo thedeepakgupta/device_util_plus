@@ -4,10 +4,19 @@ class MemoryInfo {
   final num _totalRam;
   final num _availableRam;
 
-  MemoryInfo(this._totalStorage, this._availableStorage, this._totalRam, this._availableRam);
+  MemoryInfo(
+    this._totalStorage,
+    this._availableStorage,
+    this._totalRam,
+    this._availableRam,
+  );
 
-  factory MemoryInfo.fromJson(Map<String, dynamic> json) =>
-      MemoryInfo(json['storage_total'] ?? 0, json['storage_available'] ?? 0, json['ram_total'] ?? 0, json['ram_available'] ?? 0);
+  factory MemoryInfo.fromJson(Map<String, dynamic> json) => MemoryInfo(
+    json['storage_total'] ?? 0,
+    json['storage_available'] ?? 0,
+    json['ram_total'] ?? 0,
+    json['ram_available'] ?? 0,
+  );
 
   // Getter methods
   num get totalStorage => _totalStorage / 1024 / 1024;

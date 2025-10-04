@@ -3,15 +3,15 @@
 # Run `pod lib lint device_utils.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'device_utils'
+  s.name             = 'device_util_plus'
   s.version          = '0.0.1'
-  s.summary          = '`device_utils` is a lightweight Flutter package that provides easy access to device information like battery level, network status, and storage paths. It works natively on Android and iOS without any external dependencies.'
+  s.summary          = '`device_utils` is a lightweight Flutter package that provides easy access to device information like battery, network and storage.'
   s.description      = <<-DESC
-`device_utils` is a lightweight Flutter package that provides easy access to device information like battery level, network status, and storage paths. It works natively on Android and iOS without any external dependencies.
+`device_utils` is a lightweight Flutter package that provides easy access to device information like battery, network and storage.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/thedeepakgupta/device_util_plus'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Deepak Gupta' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
