@@ -1,6 +1,6 @@
 # Device Utils
 
-`device_utils` is a Flutter plugin that provides essential device information, network utilities, storage details, and battery status for both Android and iOS platforms. It supports **real-time updates** for battery and network status using EventChannels.
+`device_util_plus` is a Flutter plugin that provides essential device information, network utilities, storage details, and battery status for both Android and iOS platforms. It supports **real-time updates** for battery and network status using EventChannels.
 
 ---
 
@@ -47,7 +47,7 @@ Add the dependency in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  device_utils: latest
+  device_util_plus: latest
 ```  
 
 Then run:
@@ -57,19 +57,19 @@ flutter pub get
 
 Add by command line:
 ``` bash
-flutter pub add device_utils
+flutter pub add device_util_plus
 ```
 
 ## Usage
 
-Import `package:device_utils/device_utils.dart`, instantiate `BatteryUtils`,`NetworkUtils`,`StorageUtils` & `DeviceUtils` and use the Android and iOS get platform-specific device information.
+Import `package:device_util_plus/device_util_plus.dart`, instantiate `BatteryUtils`,`NetworkUtils`,`StorageUtils` & `DeviceUtils` and use the Android and iOS get platform-specific device information.
 
 ##  Examples
 
 ### Battery
 
 ```dart
-import 'package:device_utils/device_utils.dart';
+import 'package:device_util_plus/device_util_plus.dart';
 
 BatteryUtils.getBatteryLevel().then((result) {
   print('Battery Level => $result');
@@ -87,7 +87,7 @@ BatteryUtils.onBatteryStateChanged.listen((status) {
 ### Network
 
 ```dart
-import 'package:device_utils/device_utils.dart';
+import 'package:device_util_plus/device_util_plus.dart';
 
 // Check connectivity
 NetworkUtils.isConnected().then((result) {
@@ -103,7 +103,7 @@ NetworkUtils.onNetworkChange.listen((result) {
 ### Storage
 
 ```dart
-import 'package:device_utils/device_utils.dart';
+import 'package:device_util_plus/device_util_plus.dart';
 
 StorageUtils.info().then((MemoryInfo data) {
   print('Storage Info => ${data.toString()}');
@@ -125,7 +125,7 @@ The `MemoryInfo` class provides detailed information about the device's **storag
 ### Device Info
 
 ```dart
-import 'package:device_utils/device_utils.dart';
+import 'package:device_util_plus/device_util_plus.dart';
 
 DeviceUtils.info().then((DeviceInfo data) {
   print('Device Info => ${data.toString()}');

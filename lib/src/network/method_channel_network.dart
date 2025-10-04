@@ -1,6 +1,6 @@
-import 'package:device_utils/device_utils.dart';
 import 'package:flutter/services.dart';
 import 'network_platform_interface.dart';
+import '../enums/device_util_enum.dart';
 
 class MethodChannelNetwork extends NetworkPlatform {
   static const MethodChannel _channel = MethodChannel('device_utils');

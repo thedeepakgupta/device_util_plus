@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:device_utils/device_utils.dart';
+import 'package:device_util_plus/device_util_plus.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     BatteryUtils.onBatteryStateChanged.listen((status) {
-      print('_MyAppState.initState:onBatteryLevelChanged => $status');
+      print('_MyAppState.initState:onBatteryStateChanged => $status');
     });
 
     NetworkUtils.isConnected().then((result) {

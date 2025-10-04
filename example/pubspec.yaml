@@ -18,7 +18,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  device_utils:
+  device_util_plus:
     # When depending on this package from a real application you should use:
     #   device_utils: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
