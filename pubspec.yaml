@@ -1,7 +1,7 @@
 name: device_utils
 description: "`device_utils` is a lightweight Flutter package that provides easy access to device information like battery level, network status, and storage paths. It works natively on Android and iOS without any external dependencies."
 version: 0.0.1
-homepage:
+homepage: https://github.com/thedeepakgupta/device_utils
 
 environment:
   sdk: ^3.7.0
