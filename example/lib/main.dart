@@ -17,29 +17,29 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    // BatteryUtils.getBatteryLevel().then((result) {
-    //   print('_MyAppState.initState : getBatteryLevel : => $result');
-    // });
-    //
-    // BatteryUtils.onBatteryLevelChanged.listen((level) {
-    //   print('_MyAppState.initState:onBatteryLevelChanged => $level');
-    // });
-    //
-    // BatteryUtils.onBatteryStateChanged.listen((status) {
-    //   print('_MyAppState.initState:onBatteryLevelChanged => $status');
-    // });
-    //
-    // NetworkUtils.isConnected().then((result) {
-    //   print('_MyAppState.initState : isConnected : => $result');
-    // });
-    //
-    // NetworkUtils.onNetworkChange.listen((result) {
-    //   print('_MyAppState.initState : onNetworkChange : => $result');
-    // });
-    //
-    // StorageUtils.info().then((data) {
-    //   print('StorageUtils => ${data.toString()}');
-    // });
+    BatteryUtils.getBatteryLevel().then((result) {
+      print('_MyAppState.initState : getBatteryLevel : => $result');
+    });
+
+    BatteryUtils.onBatteryLevelChanged.listen((level) {
+      print('_MyAppState.initState:onBatteryLevelChanged => $level');
+    });
+
+    BatteryUtils.onBatteryStateChanged.listen((status) {
+      print('_MyAppState.initState:onBatteryLevelChanged => $status');
+    });
+
+    NetworkUtils.isConnected().then((result) {
+      print('_MyAppState.initState : isConnected : => $result');
+    });
+
+    NetworkUtils.onNetworkChange.listen((result) {
+      print('_MyAppState.initState : onNetworkChange : => $result');
+    });
+
+    StorageUtils.info().then((data) {
+      print('StorageUtils => ${data.toString()}');
+    });
 
     DeviceUtils.info().then((data) {
       print('DeviceUtils => ${data.toString()}');
