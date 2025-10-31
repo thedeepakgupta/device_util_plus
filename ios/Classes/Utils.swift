@@ -54,4 +54,10 @@ struct Utils {
               "osVersion": "\(device.systemName) \(device.systemVersion)",
           ]
       }
+
+      static func vibrateDevice() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.prepare()
+        generator.impactOccurred()
+      }
 }

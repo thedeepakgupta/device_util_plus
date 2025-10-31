@@ -1,43 +1,54 @@
 # Device Utils
 
-`device_util_plus` is a Flutter plugin that provides essential device information, network utilities, storage details, and battery status for both Android and iOS platforms. It supports **real-time updates** for battery and network status using EventChannels.
+`device_util_plus` is a Flutter plugin that provides essential device information, network utilities, storage details, battery status, and vibration support for both Android and iOS platforms. It supports **real-time updates** for battery and network status using EventChannels.
 
 ---
 
 ## Platform Support
 
-| Android | iOS | 
-|:-------:|:---:| 
-|    ✅    |  ✅  | 
+| Android | iOS |
+|:-------:|:---:|
+|    ✅    |  ✅  |
 
 ## Requirements
 
-- Flutter >=3.29.0
-- Dart >=3.7.0 <4.0.0
-- iOS >=12.0
-- Android >= 21
+* Flutter >=3.29.0
+* Dart >=3.7.0 <4.0.0
+* iOS >=12.0
+* Android >=21
+
+---
 
 ## Features
 
 ### Storage Info
-- Get **Total Storage** and **Available Storage**
-- Get **Total RAM** and **Available RAM**
+
+* Get **Total Storage** and **Available Storage**
+* Get **Total RAM** and **Available RAM**
 
 ### Network Utils
-- Check if the device is **connected** to the internet
-- Receive **real-time network status changes** (WiFi, Mobile, Ethernet)
+
+* Check if the device is **connected** to the internet
+* Receive **real-time network status changes** (WiFi, Mobile, Ethernet)
 
 ### Battery
-- Get **current battery level**
-- Receive **real-time battery level changes**
-- Receive **real-time battery status changes** (charging, discharging, full, etc.)
+
+* Get **current battery level**
+* Receive **real-time battery level changes**
+* Receive **real-time battery status changes** (charging, discharging, full, etc.)
 
 ### Device Info
-- Get **device name**
-- Get **manufacturer**
-- Get **brand**
-- Get **OS version**
-- Get **device model**
+
+* Get **device name**
+* Get **manufacturer**
+* Get **brand**
+* Get **OS version**
+* Get **device model**
+
+### Vibration
+
+* Trigger **device vibration** programmatically
+* Works on both **Android** and **iOS**
 
 ---
 
@@ -48,25 +59,38 @@ Add the dependency in your `pubspec.yaml`:
 ```yaml
 dependencies:
   device_util_plus: latest
-```  
+```
 
 Then run:
-``` bash
+
+```bash
 flutter pub get
 ```
 
-Add by command line:
-``` bash
+Or add directly via command line:
+
+```bash
 flutter pub add device_util_plus
 ```
 
+---
+
 ## Usage
 
-Import `package:device_util_plus/device_util_plus.dart`, instantiate `BatteryUtils`,`NetworkUtils`,`StorageUtils` & `DeviceUtils` and use the Android and iOS get platform-specific device information.
+Import `package:device_util_plus/device_util_plus.dart`, and use the provided utilities:
 
-##  Examples
+* `BatteryUtils`
+* `NetworkUtils`
+* `StorageUtils`
+* `DeviceUtils`
 
-### Battery
+Each utility provides access to platform-specific information and functionality.
+
+---
+
+## Examples
+
+### 🔋 Battery
 
 ```dart
 import 'package:device_util_plus/device_util_plus.dart';
@@ -84,7 +108,9 @@ BatteryUtils.onBatteryStateChanged.listen((status) {
 });
 ```
 
-### Network
+---
+
+### 🌐 Network
 
 ```dart
 import 'package:device_util_plus/device_util_plus.dart';
@@ -100,7 +126,9 @@ NetworkUtils.onNetworkChange.listen((result) {
 });
 ```
 
-### Storage
+---
+
+### 💾 Storage
 
 ```dart
 import 'package:device_util_plus/device_util_plus.dart';
@@ -110,19 +138,18 @@ StorageUtils.info().then((MemoryInfo data) {
 });
 ```
 
-The `MemoryInfo` class provides detailed information about the device's **storage** and **RAM**. It allows you to retrieve both total and available memory, as well as calculate used memory. Values are returned in **megabytes (MB)** for easier readability.
-
-#### Properties
+#### `MemoryInfo` Properties
 
 * `totalStorage`: Total device storage in MB
 * `availableStorage`: Available device storage in MB
-* `usedStorage`: Used device storage in MB (calculated as `totalStorage - availableStorage`)
+* `usedStorage`: Used device storage in MB (`totalStorage - availableStorage`)
 * `totalRam`: Total RAM in MB
 * `availableRam`: Available RAM in MB
-* `usedRam`: Used RAM in MB (calculated as `totalRam - availableRam`)
+* `usedRam`: Used RAM in MB (`totalRam - availableRam`)
 
+---
 
-### Device Info
+### 📱 Device Info
 
 ```dart
 import 'package:device_util_plus/device_util_plus.dart';
@@ -132,12 +159,28 @@ DeviceUtils.info().then((DeviceInfo data) {
 });
 ```
 
-The `DeviceInfo` class provides detailed information about a device’s **identity and specifications**, including manufacturer, brand, OS version, and more.
+#### `DeviceInfo` Properties
 
-#### Properties
+* `deviceId`: A unique identifier for the device
+* `name`: The name of the device
+* `manufacturer`: Device manufacturer
+* `osVersion`: Operating system version
+* `brand`: Device brand
 
-* `deviceId`: A unique identifier for the device (String)
-* `name`: The name of the device (String)
-* `manufacturer`: Device manufacturer (String)
-* `osVersion`: Operating system version (String)
-* `brand`: Device brand (String)
+---
+
+### 🔔 Vibrate
+
+```dart
+import 'package:device_util_plus/device_util_plus.dart';
+
+// Vibrate the device
+DeviceUtils.vibrate();
+```
+
+This method triggers a short vibration on the device.
+
+> **Note:**
+>
+> * Works on both Android and iOS
+> * On iOS, the vibration behavior depends on the system’s haptic feedback support and user settings.

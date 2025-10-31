@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Added `DeviceUtils.vibrate()` method for device vibration support.
+
 ## 0.0.2
 
 * Minor bug fixes for ios and dart format

@@ -14,6 +14,9 @@ import java.io.File
 import android.os.StatFs
 import android.os.Environment
 import android.app.ActivityManager
+//Vibrator
+import android.os.VibrationEffect
+import android.os.Vibrator
 
 
 object Utils {
@@ -99,6 +102,20 @@ object Utils {
             "osVersion" to "${Build.VERSION.SDK_INT}",
             "brand" to "${Build.BRAND}"
         )
+    }
+
+    fun vibrateDevice(context: Context) {
+        val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(
+                VibrationEffect.createOneShot(
+                    500,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
+            )
+        } else {
+            vibrator.vibrate(500)
+        }
     }
 
 

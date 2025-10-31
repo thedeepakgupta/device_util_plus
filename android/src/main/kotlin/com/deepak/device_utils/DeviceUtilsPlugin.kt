@@ -47,6 +47,9 @@ class DeviceUtilsPlugin : FlutterPlugin, MethodCallHandler {
         } else if (call.method == "device-info") {
             var temp = Utils.getDeviceInfo(context);
             result.success(temp)
+        } else if (call.method == "device-vibrate") {
+            Utils.vibrateDevice(context);
+            result.success(true)
         } else {
             result.notImplemented()
         }

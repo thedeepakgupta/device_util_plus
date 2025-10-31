@@ -8,4 +8,9 @@ class MethodChannelDevice extends DevicePlatform {
   Future<dynamic> deviceInfo() async {
     return await _channel.invokeMethod("device-info");
   }
+
+  @override
+  Future<dynamic> vibrate() async {
+    return await _channel.invokeMethod("device-vibrate");
+  }
 }

@@ -23,4 +23,9 @@ abstract class DevicePlatform extends PlatformInterface {
   Future<dynamic> deviceInfo() {
     throw UnimplementedError('deviceInfo() has not been implemented.');
   }
+
+  /// Trigger vibration
+  Future<dynamic> vibrate() {
+    throw UnimplementedError('vibrate() has not been implemented.');
+  }
 }

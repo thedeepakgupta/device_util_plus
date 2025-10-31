@@ -38,6 +38,9 @@ public class DeviceUtilsPlugin: NSObject, FlutterPlugin {
       result(Utils.getDeviceResources())
     case "device-info":
       result(Utils.getDeviceInfo())
+    case "device-vibrate":
+      Utils.vibrateDevice()
+      result(true)
     default:
       result(FlutterMethodNotImplemented)
     }
